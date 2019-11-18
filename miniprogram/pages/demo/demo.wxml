@@ -1,0 +1,32 @@
+<!--this is a demo page-->
+<view class="page">
+    <!--页面头部-->
+    <view class="page__hd head">
+        <!--子部件1-->
+        <view class="placeholder">头部图片</view>
+    </view>
+    <!--页面内容-->
+    <view class="page__bh page__spacing">
+        <!--子部件2-->
+        <view class="weui-flex catelog">
+            <view class="weui-flex__item">
+                <view class="placeholder">板块1</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder">板块2</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder">板块3</view>
+            </view>
+        </view>
+        <!--子部件3-->
+        <view class="content">
+            <view class="placeholder">内容</view>
+        </view>
+    </view>
+    <!--页面底部-->
+    <view class="page__fh page__spacing footer">
+        <!--子部件4-->
+        <view class="placeholder">底部</view>
+    </view>
+</view>
