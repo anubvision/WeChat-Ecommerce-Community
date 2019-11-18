@@ -1,30 +1,50 @@
-// pages/demo/demo.js
-Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
-  },
+Page({
 
   /**
-   * 组件的初始数据
+   * 页面的初始数据
    */
   data: {
-    content: "我是页面交互元素"
+    count: ''
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+
+    //前端直接操作数据库
+    this.pageCounter()
+  },
 
   /**
-   * 组件的方法列表
+   * 本地调用数据库更新页面访问次数
    */
-  methods: {
-    
-  clickEvent: function (options) {
-    this.setData({
-      content: "当用户点击按钮，事件改变数据，数据改变交互页面的显示内容"
-    })
-  }
+  pageCounter: function() {
+    const db = wx.cloud.database()
+    const _ = db.command
 
-  }
+    db.collection('counters')
+      .get()
+      .then(res => {
+        if (res.data.length > 0) {
+          db.collection('counters').doc(res.data[0]._id).update({
+            data: {
+              count: _.inc(1)
+            }
+          })
+          this.setData({
+            count: res.data[0].count + 1
+          })
+        } else {
+          db.collection('counters').add({
+            data: {
+              count: 1
+            }
+          })
+          this.setData({
+            count: 1
+          })
+        }
+      });
+  },
 })

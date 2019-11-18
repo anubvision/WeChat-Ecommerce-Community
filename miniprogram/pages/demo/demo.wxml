@@ -27,6 +27,6 @@
     <!--页面底部-->
     <view class="page__fh page__spacing footer">
         <!--子部件4-->
-        <view class="placeholder">底部</view>
+        <view class="placeholder">这是你第{{count}}次访问页面</view>
     </view>
 </view>
