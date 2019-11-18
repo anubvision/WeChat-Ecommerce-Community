@@ -21,9 +21,23 @@
         </view>
         <!--子部件3-->
         <view class="content">
-            <view class="placeholder">内容</view>
+            <view class="weui-panel weui-panel_access">
+                <view class="weui-panel__bd">
+                    <block wx:for="{{title_desc_array}}" wx:key="_id" wx:for-item="title_desc">
+                        <view class="weui-media-box weui-media-box_text">
+                        <view class="weui-media-box__title weui-media-box__title_in-text">{{title_desc.title}}</view>
+                        <view class="weui-media-box__desc">{{title_desc.description}}</view>
+                        </view>
+                    </block>
+                </view>
+                <view class="weui-panel__ft" wx:if="{{is_no_more_data}}">
+                    <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+                        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+                    </view>
+                    </view>
+                </view>
+            </view>
         </view>
-    </view>
     <!--页面底部-->
     <view class="page__fh page__spacing footer">
         <!--子部件4-->
