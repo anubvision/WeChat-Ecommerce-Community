@@ -1,0 +1,10 @@
+<!--miniprogram/pages/demo_run/demo_run.wxml-->
+<view>
+    <block wx:for="{{stepInfoList}}" wx:key="{{timestamp}}">
+       <view>
+          <text>step:{{item.step}}</text>
+          <text> | </text>
+          <text>timestamp: {{item.timestamp}}</text>
+       </view>
+    </block>
+</view>
