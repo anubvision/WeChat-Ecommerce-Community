@@ -301,4 +301,58 @@ Page({
       inputLength: e.detail.value.length
     });
   },
+
+  /**
+   * 保存表单到数据库
+   */
+  saveForm: function (params) {
+    const db = wx.cloud.database()
+
+    db.collection('form_demo').add({
+        data: {
+          //Input
+          name: params.name,     
+          email: params.email,
+          tel: params.tel,
+          idcard: params.idcard,
+          password: params.password,
+          //Textarea
+          textarea: params.textarea,
+          //radio
+          gender: this.data.gender,
+          //checkbox
+          skills: this.data.skills,
+          //switch
+          publicInfo: this.data.publicInfo,
+          //picker
+          date: this.data.date,
+          countryIndex: this.data.countries[this.data.countryIndex],
+          //User Agreement
+          isAgree: this.data.isAgree, 
+          //使用云服务器时间记录表单提交时间
+          createTime: db.serverDate() 
+        }
+      })
+      .then(res => {
+        wx.showModal({
+          title: '提交',
+          content: '表单插入数据库成功, ID:' + res._id,
+          showCancel: false,
+          success(res) {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }
+        })
+      })
+      .catch(err => {
+        wx.showModal({
+          title: '提交',
+          content: '表单插入数据库失败，具体原因见console',
+          showCancel: false,
+        })
+        console.log(err)
+      })
+  }
 })
+

@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/my/level/level",
     "pages/demo_run/demo_run",
     "pages/demo_form/demo_form",
     "pages/demo/demo",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/errorpage/errorpage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

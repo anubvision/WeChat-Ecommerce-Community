@@ -55,7 +55,6 @@ Page({
     wx.getWeRunData({
       success(weRunEncryptedData) {
         //在调试器中打印获取到的加密数据
-        console.log(weRunEncryptedData)
         //调用云函数进行解密
         that.getStepInfoList(weRunEncryptedData)
       }
@@ -72,7 +71,7 @@ Page({
       success: function (res) {
         console.log(res.result)
         that.setData({
-          stepInfoList: res.result.event.weRunData.data.stepInfoList
+          stepInfoList: res.result
         })
       }
     })

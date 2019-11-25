@@ -1,0 +1,88 @@
+
+<!--part 2 user's current level of privilege-->
+<!--part 3 user's system of progress's value-->
+
+<!--part 1 user's current level and progress's view-->
+<!--get userinfo and view the page-->
+<view wx:if = "{{inited}}">
+    <view class="padding bg-white">
+        <!--view the avatar and nickname-->
+        <view class="weui-flex align-center">
+            <view class="cu-avatar lg round bg-gray margin-right">
+                <open-data class="userAvatarUrl" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="weui-flex__item">
+                <open-data type="userNickName"></open-data>
+            </view>
+
+         <!-- 显示用户等级图标及成长值 -->
+            <view class="cu-avatar sm round margin-right bg-white line-{{ myLevel.icon }} solids">
+              <text class="icon-medal"> </text>
+            </view>
+            <view class="text-xxl margin-right line-{{ myLevel.icon }}">
+              <text> {{myInfo.growthValue}} </text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 页面第二部分 -->
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <!-- 显示用户当前等级权益 -->
+      <view class="weui-cell weui-cell_hide_line">
+        <view class="weui-cell__bd">
+          <view class="text-xl text-black padding-bottom-sm">
+            我的权益
+          </view>
+          <view class="weui-flex text-center">
+            <block wx:for="{{myLevel.bonus}}" wx:key=">this">
+              <view class="weui-flex__item">
+                <view class="cu-avatar xl round bg-white line-{{myLevel.icon}} solids">
+                  <text wx-if="{{item.desc.length > 0}}" class="avatar-text">{{item.desc}}</text>
+                  <view wx-if="{{item.desc.length <= 0}}" class="text-sl">
+                    <text class="icon-edit"></text>
+                  </view>
+                </view>
+                <view>{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 显示用户等级升级说明 -->
+  <view wx:if="{{ growthValueToNextLevel > 0 }}" class="weui-cell weui-cell_hide_line">
+    <view class="weui-cell__bd">
+      <view>
+        还差
+        <text class="line-{{nextLevel.icon}}"> {{growthValueToNextLevel}} </text>成长值就能成为
+        <text class="line-{{nextLevel.icon}}"> {{nextLevel.title}}</text>，加油！
+      </view>
+    </view>
+  </view>
+
+
+
+  <!--第三部分-->
+  <!-- 页面第三部分 -->
+  <view class="weui-panel">
+    <!-- 成长体系中的所有成长等级列表 使用scroll-view实现横向滚动 -->
+    <view class="weui-panel__hd">
+      <view class="text-xl text-black">
+        成长体系
+      </view>
+      <scroll-view scroll-x="true" scroll-into-view="{{myLevel.icon}}" class="level_list_container">
+        <block wx:for="{{levels}}" wx:for-item="level" wx:key="{{level.id}}">
+          <view id="{{level.icon}}" class="level_tab_item margin-sm" bindtap="onLevelItemClick" data-item="{{level}}">
+            <view class="cu-avatar {{ level.id == selectedId ? 'lg' : '' }} round bg-white line-{{ level.icon }} solids">
+              <text class="icon-medal"></text>
+            </view>
+            <view class="{{ level.id == selectedId ? 'text-xl text-black' : '' }}">{{level.title}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
