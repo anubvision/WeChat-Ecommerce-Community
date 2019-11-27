@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/walkingstepsync/walkingstepsync",
     "pages/my/level/level",
     "pages/demo_run/demo_run",
     "pages/demo_form/demo_form",

@@ -69,7 +69,6 @@ Page({
         weRunData: wx.cloud.CloudID(weRunEncryptedData.cloudID)// 这个 CloudID 值到云函数端会被替换
       },
       success: function (res) {
-        console.log(res.result)
         that.setData({
           stepInfoList: res.result
         })
