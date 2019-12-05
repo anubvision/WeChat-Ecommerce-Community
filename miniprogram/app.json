@@ -1,12 +1,16 @@
 {
   "pages": [
+    "pages/my/menbershipplan/membershipplan",
+    "pages/my/membershipcard/membershipcard",
+    "pages/my/point/point",
     "pages/my/walkingstepsync/walkingstepsync",
     "pages/my/level/level",
     "pages/demo_run/demo_run",
     "pages/demo_form/demo_form",
     "pages/demo/demo",
     "pages/index/index",
-    "pages/errorpage/errorpage"
+    "pages/errorpage/errorpage",
+    "pages/userlockedpage/userlockedpage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

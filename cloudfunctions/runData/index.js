@@ -27,7 +27,6 @@ const MAX_LIMIT = 100
  */
 exports.main = async (event, context) => {
   var weRunData = event.weRunData
-  console.log(weRunData.data.stepInfoList)
   await syncGrowthValue(weRunData.data.stepInfoList)
   return await syncPoint(weRunData.data.stepInfoList)
 }
@@ -87,7 +86,6 @@ async function syncPoint(weRunData) {
       changePoints: 0
     })
   }
-
   //根据微信运动数据更新积分
   for (var i in weRunData) {
     var data = weRunData[i]
@@ -129,7 +127,6 @@ async function syncPoint(weRunData) {
       }
     }
   }
-
   //更新用户的总可用积分
 
   //首先获取所有积分记录
