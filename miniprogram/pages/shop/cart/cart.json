@@ -1,0 +1,6 @@
+  {
+    "usingComponents": {
+      "userLockCheck": "/components/userLockCheck/userLockCheck"
+    },
+    "navigationBarTitleText": "购物车"
+  }

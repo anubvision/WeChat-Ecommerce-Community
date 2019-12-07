@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "waterFallView": "/components/WaterFallView/WaterFallView",
+    "userLockCheck": "/components/userLockCheck/userLockCheck"
+  },
+  "navigationBarTitleText": "搜索"
+}

@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/my/order/order",
+    "pages/shop/cart/cart",
+    "pages/shop/product/product",
+    "pages/shop/search/search",
+    "pages/shop/index/index",
     "pages/my/menbershipplan/membershipplan",
     "pages/my/membershipcard/membershipcard",
     "pages/my/point/point",
@@ -10,7 +15,8 @@
     "pages/demo/demo",
     "pages/index/index",
     "pages/errorpage/errorpage",
-    "pages/userlockedpage/userlockedpage"
+    "pages/userlockedpage/userlockedpage",
+    "pages/update_products/update_products"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

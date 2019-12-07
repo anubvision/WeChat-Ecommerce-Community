@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "waterFallView": "/components/WaterFallView/WaterFallView",
+    "scrollCategory": "/components/ScrollCategory/ScrollCategory",
+    "userLockCheck": "/components/userLockCheck/userLockCheck"
+  },
+  "navigationBarTitleText": "商城"
+}
