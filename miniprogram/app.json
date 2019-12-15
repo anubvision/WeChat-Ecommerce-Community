@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/community/note/note",
+    "pages/community/index/index",
+    "pages/community/postnote/postnote",
     "pages/my/order/order",
     "pages/shop/cart/cart",
     "pages/shop/product/product",
