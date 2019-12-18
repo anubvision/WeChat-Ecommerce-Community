@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/community/note/note",
+    "pages/shop/index/index",
+    "pages/shop/product/product",
+    "pages/my/index/index",
     "pages/community/index/index",
+    "pages/community/note/note",
     "pages/community/postnote/postnote",
     "pages/my/order/order",
     "pages/shop/cart/cart",
-    "pages/shop/product/product",
     "pages/shop/search/search",
-    "pages/shop/index/index",
     "pages/my/menbershipplan/membershipplan",
     "pages/my/membershipcard/membershipcard",
     "pages/my/point/point",
@@ -21,6 +22,32 @@
     "pages/userlockedpage/userlockedpage",
     "pages/update_products/update_products"
   ],
+  "tabBar": {
+    "color": "#353535",
+    "selectedColor": "#09bb07",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/shop/index/index",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_hl.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/community/index/index",
+        "iconPath": "images/icon_file.png",
+        "selectedIconPath": "images/icon_file_hl.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_hl.png",
+        "text": "我的"
+      }
+    ]
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",

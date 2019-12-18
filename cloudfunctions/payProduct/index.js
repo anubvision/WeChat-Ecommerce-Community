@@ -83,6 +83,7 @@ exports.main = async (event, context) => {
   var totalPrice = 0
   //实际支付价格
   var paymentFee = 0
+  console.log(user.point, paymentFee)
   for (var i in products) {
     totalPrice += parseInt(products[i].price)
     paymentFee += Math.ceil(parseInt(products[i].price) * discount)
